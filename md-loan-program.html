@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical Professional Home Loans — Horizon Capital Lending Group</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #2C2C2C; --navy-deep: #1A1A1A;
+      --gold: #B89544; --gold-deep: #97772E; --gold-light: #D4B36A;
+      --gold-soft: #F5EDDC; --gold-glow: #FBF6E8;
+      --white: #FFFFFF; --off-white: #FAFAF8;
+      --line: #E8E6E0; --line-soft: #F0EEEA;
+      --text: #2C2C2C; --text-mid: #5A5A52; --muted: #8A8A7E; --faint: #BCBCB0;
+      --font: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --mono: 'JetBrains Mono', ui-monospace, monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); font-size: 15px; line-height: 1.6; color: var(--text); background: var(--white); -webkit-font-smoothing: antialiased; }
+
+    /* NAV */
+    .nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--line); }
+    .nav-inner { max-width: 1120px; margin: 0 auto; padding: 0.85rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .nav-logo img { height: 40px; width: auto; }
+    .nav-logo .wordmark { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--text); line-height: 1.1; }
+    .nav-logo .wordmark em { font-style: italic; color: var(--gold); font-weight: 500; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.72rem; font-weight: 600; color: var(--muted); text-decoration: none; letter-spacing: 0.12em; text-transform: uppercase; transition: color 200ms; }
+    .nav-links a:hover { color: var(--gold); }
+    @media (max-width: 700px) { .nav-links { display: none; } }
+
+    /* HERO */
+    .hero { padding: clamp(4rem, 8vw, 8rem) 2rem; text-align: center; position: relative; }
+    .hero::after { content: ''; position: absolute; bottom: 0; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, var(--line), transparent); }
+    .hero-tag { display: inline-block; font-family: var(--mono); font-size: 0.6rem; color: var(--gold-deep); letter-spacing: 0.25em; text-transform: uppercase; border: 1.5px solid var(--gold); border-radius: 999px; padding: 0.4rem 1.25rem; margin-bottom: 2rem; }
+    .hero h1 { font-family: var(--serif); font-size: clamp(2.5rem, 2rem + 3.5vw, 4.5rem); font-weight: 400; color: var(--text); line-height: 1; letter-spacing: -0.015em; margin-bottom: 1.5rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+    .hero h1 em { font-style: italic; color: var(--gold); }
+    .hero .lede { font-size: clamp(1rem, 0.9rem + 0.4vw, 1.15rem); color: var(--muted); max-width: 560px; margin: 0 auto 2.5rem; line-height: 1.65; }
+    .hero-btn { display: inline-flex; align-items: center; gap: 0.75rem; padding: 1rem 2.25rem; border: none; border-radius: 4px; font-family: var(--font); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; background: var(--text); color: var(--white); text-decoration: none; transition: all 200ms; }
+    .hero-btn:hover { background: var(--gold-deep); }
+    .hero-btn .arr { color: var(--gold-light); font-size: 1rem; }
+
+    /* STATS */
+    .stats-bar { background: var(--off-white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .stats-inner { max-width: 1120px; margin: 0 auto; padding: 3.5rem 2rem; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2rem; align-items: center; }
+    @media (max-width: 700px) { .stats-inner { grid-template-columns: 1fr; gap: 1.5rem; text-align: center; } }
+    .stat-featured { position: relative; }
+    .stat-featured-kicker { font-family: var(--mono); font-size: 0.58rem; color: var(--muted); letter-spacing: 0.22em; text-transform: uppercase; }
+    .stat-featured-num { font-family: var(--serif); font-size: clamp(4rem, 3rem + 5vw, 6.5rem); font-weight: 400; color: var(--text); line-height: 0.9; letter-spacing: -0.025em; }
+    .stat-featured-num span { color: var(--gold); font-style: italic; }
+    .stat-featured-label { font-size: 0.92rem; font-weight: 600; color: var(--text); margin-top: 0.5rem; }
+    .stat-featured-label em { display: block; font-style: normal; font-weight: 400; color: var(--muted); font-size: 0.78rem; margin-top: 0.25rem; }
+    .stat-mini { text-align: center; position: relative; }
+    .stat-mini + .stat-mini::before { content: ''; position: absolute; left: -1rem; top: 20%; bottom: 20%; width: 1px; background: var(--line); }
+    @media (max-width: 700px) { .stat-mini + .stat-mini::before { display: none; } }
+    .stat-mini-num { font-family: var(--serif); font-size: clamp(2.5rem, 2rem + 2vw, 3.5rem); font-weight: 400; color: var(--text); line-height: 1; }
+    .stat-mini-label { font-family: var(--mono); font-size: 0.6rem; color: var(--muted); letter-spacing: 0.18em; text-transform: uppercase; margin-top: 0.4rem; }
+
+    /* SECTION */
+    .section { max-width: 1120px; margin: 0 auto; padding: clamp(4rem, 8vw, 7rem) 2rem; }
+    .section-label { font-family: var(--mono); font-size: 0.6rem; color: var(--gold-deep); letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 1rem; }
+    .section-title { font-family: var(--serif); font-size: clamp(2rem, 1.5rem + 2vw, 3rem); font-weight: 400; color: var(--text); line-height: 1.1; margin-bottom: 0.75rem; }
+    .section-title em { font-style: italic; color: var(--gold); }
+    .section-sub { font-size: 1rem; color: var(--muted); max-width: 520px; margin-bottom: 3rem; line-height: 1.6; }
+
+    /* HIGHLIGHTS GRID */
+    .highlights { display: grid; grid-template-columns: 1.4fr 1fr; gap: 2rem; }
+    @media (max-width: 700px) { .highlights { grid-template-columns: 1fr; } }
+    .card { background: var(--off-white); border: 1px solid var(--line); border-radius: 8px; padding: 2rem; }
+    .card-kicker { font-family: var(--mono); font-size: 0.58rem; color: var(--gold-deep); letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .card-title { font-family: var(--serif); font-size: 1.4rem; font-weight: 500; color: var(--text); margin-bottom: 1.25rem; padding-bottom: 0.85rem; border-bottom: 1px solid var(--line); }
+    .numbered-list { list-style: none; padding: 0; }
+    .numbered-list li { display: grid; grid-template-columns: 32px 1fr; gap: 0.75rem; padding: 0.65rem 0; border-bottom: 1px solid var(--line-soft); align-items: baseline; }
+    .numbered-list li:last-child { border-bottom: none; }
+    .numbered-list li .num { font-family: var(--mono); font-size: 0.62rem; color: var(--gold-deep); font-weight: 500; letter-spacing: 0.1em; }
+    .numbered-list li .txt { font-size: 0.9rem; color: var(--text); line-height: 1.5; }
+    .numbered-list li .txt strong { color: var(--navy-deep); font-weight: 600; }
+    .card-note { font-size: 0.72rem; color: var(--muted); margin-top: 0.85rem; padding-top: 0.85rem; border-top: 1px solid var(--line-soft); font-style: italic; }
+
+    /* DEGREE BADGES */
+    .degrees { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 1rem 0; }
+    .degree { font-family: var(--mono); font-size: 0.7rem; font-weight: 500; color: var(--text); padding: 0.4rem 0.7rem; background: var(--white); border: 1px solid var(--line); border-radius: 4px; letter-spacing: 0.05em; }
+    .degree.primary { background: var(--text); color: var(--gold-soft); border-color: var(--text); }
+    .elig-text { font-size: 0.88rem; color: var(--muted); line-height: 1.55; }
+
+    /* FEATURES ROW */
+    .features-bg { background: var(--off-white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .features-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    @media (max-width: 700px) { .features-row { grid-template-columns: 1fr; } }
+    .feat { padding-left: 1.25rem; border-left: 1.5px solid var(--gold); }
+    .feat-label { font-family: var(--mono); font-size: 0.58rem; color: var(--gold-deep); letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 0.4rem; }
+    .feat-text { font-size: 0.88rem; color: var(--text); line-height: 1.55; }
+
+    /* CTA */
+    .cta-section { text-align: center; padding: clamp(4rem, 8vw, 6rem) 2rem; position: relative; }
+    .cta-section::before { content: ''; position: absolute; top: 0; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, var(--line), transparent); }
+    .cta-section h2 { font-family: var(--serif); font-size: clamp(2rem, 1.5rem + 2vw, 3rem); font-weight: 400; color: var(--text); margin-bottom: 0.75rem; }
+    .cta-section h2 em { font-style: italic; color: var(--gold); }
+    .cta-section p { color: var(--muted); max-width: 480px; margin: 0 auto 2rem; line-height: 1.6; }
+    .cta-contact { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--line); display: inline-block; text-align: center; }
+    .cta-contact .name { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--text); margin-bottom: 0.15rem; }
+    .cta-contact .details { font-family: var(--mono); font-size: 0.7rem; color: var(--muted); letter-spacing: 0.05em; }
+
+    /* DISCLAIMER */
+    .disclaimer { max-width: 1120px; margin: 0 auto; padding: 0 2rem 3rem; }
+    .disclaimer-inner { border: 1px solid var(--line); border-radius: 6px; padding: 1.5rem; }
+    .disclaimer-label { font-family: var(--mono); font-size: 0.58rem; color: var(--muted); letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 0.6rem; }
+    .disclaimer p { font-size: 0.7rem; color: var(--muted); line-height: 1.6; margin-bottom: 0.5rem; }
+    .disclaimer p:last-child { margin-bottom: 0; }
+    .disclaimer p strong { color: var(--text); font-weight: 600; }
+
+    /* FOOTER */
+    .footer { background: var(--navy-deep); color: rgba(255,255,255,0.5); padding: 3rem 2rem; }
+    .footer-inner { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 2.5rem; }
+    @media (max-width: 700px) { .footer-inner { grid-template-columns: 1fr; gap: 2rem; } }
+    .footer-brand .f-name { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: var(--white); margin-bottom: 0.25rem; }
+    .footer-brand .f-name em { font-style: italic; color: var(--gold-light); }
+    .footer-brand .f-sub { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem; }
+    .footer-brand p { font-size: 0.78rem; line-height: 1.6; max-width: 300px; }
+    .footer h4 { font-family: var(--mono); font-size: 0.58rem; color: var(--gold-light); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem; }
+    .footer ul { list-style: none; }
+    .footer li { margin-bottom: 0.5rem; }
+    .footer a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; transition: color 200ms; }
+    .footer a:hover { color: var(--gold-light); }
+    .footer-bottom { max-width: 1120px; margin: 0 auto; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; font-size: 0.68rem; }
+
+    @media print {
+      .nav { position: relative; backdrop-filter: none; }
+      body { background: white; }
+      .card, .feat { border: 1px solid #ddd; }
+      .footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="horizon-capital-site.html" class="nav-logo">
+        <img src="content_images/Elegant HC gold monogram logo.png" alt="HC">
+        <div class="wordmark">Horizon Capital <em>Lending</em></div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="horizon-capital-site.html#team">Team</a></li>
+        <li><a href="horizon-capital-site.html#services">Services</a></li>
+        <li><a href="horizon-capital-site.html#valuation">Home Value</a></li>
+        <li><a href="#apply">Apply Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-tag">Specialized Program</div>
+    <h1>Home financing built for <em>medical professionals.</em></h1>
+    <p class="lede">Specialized loan programs designed for doctors, dentists, pharmacists, veterinarians, and other licensed professionals — including recent graduates entering the workforce.</p>
+    <a href="#apply" class="hero-btn">Check Your Eligibility <span class="arr">&rarr;</span></a>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-featured">
+        <div class="stat-featured-kicker">Up to</div>
+        <div class="stat-featured-num">100<span>%</span></div>
+        <div class="stat-featured-label">
+          Financing for qualified borrowers
+          <em>No down payment required on eligible structures</em>
+        </div>
+      </div>
+      <div class="stat-mini">
+        <div class="stat-mini-num">$0</div>
+        <div class="stat-mini-label">Mortgage Insurance</div>
+      </div>
+      <div class="stat-mini">
+        <div class="stat-mini-num">$2M</div>
+        <div class="stat-mini-label">Max Loan Amount</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HIGHLIGHTS + ELIGIBILITY -->
+  <section class="section">
+    <div class="section-label">The Program</div>
+    <h2 class="section-title">What this loan <em>delivers.</em></h2>
+    <p class="section-sub">Designed specifically for licensed medical professionals who deserve financing that reflects their career trajectory — not just their current balance sheet.</p>
+
+    <div class="highlights">
+      <div class="card">
+        <div class="card-kicker">Program Highlights</div>
+        <div class="card-title">Key benefits at a glance.</div>
+        <ul class="numbered-list">
+          <li>
+            <span class="num">01</span>
+            <span class="txt"><strong>Up to 100% financing</strong> for qualified borrowers</span>
+          </li>
+          <li>
+            <span class="num">02</span>
+            <span class="txt"><strong>No mortgage insurance</strong> on eligible program structures</span>
+          </li>
+          <li>
+            <span class="num">03</span>
+            <span class="txt">Loan amounts up to <strong>$2,000,000</strong></span>
+          </li>
+          <li>
+            <span class="num">04</span>
+            <span class="txt">Fixed-rate and adjustable-rate options available</span>
+          </li>
+          <li>
+            <span class="num">05</span>
+            <span class="txt">Primary residences: single-family homes, condos, and PUDs</span>
+          </li>
+        </ul>
+        <div class="card-note">All terms subject to qualification, credit approval, and lender guidelines.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-kicker">Who Qualifies</div>
+        <div class="card-title">Eligible degrees.</div>
+        <p class="elig-text">This program is designed for licensed medical professionals and qualifying advanced degree holders:</p>
+        <div class="degrees">
+          <span class="degree primary">MD</span>
+          <span class="degree primary">DO</span>
+          <span class="degree">DDS</span>
+          <span class="degree">DMD</span>
+          <span class="degree">PharmD</span>
+          <span class="degree">DVM</span>
+          <span class="degree">VMD</span>
+          <span class="degree">DPM</span>
+          <span class="degree">CRNA</span>
+        </div>
+        <div class="card-note">Eligibility based on profession, income, credit, and overall borrower profile. CRNA requires qualifying doctoral degree.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADDITIONAL FEATURES -->
+  <div class="features-bg">
+    <section class="section">
+      <div class="section-label">Additional Features</div>
+      <h2 class="section-title">Built for <em>flexibility.</em></h2>
+      <p class="section-sub">Features designed around the unique financial profile of medical professionals.</p>
+
+      <div class="features-row">
+        <div class="feat">
+          <div class="feat-label">First-Time Buyers</div>
+          <p class="feat-text">First-time homebuyers may be eligible for the program — ideal for residents and fellows making their first purchase.</p>
+        </div>
+        <div class="feat">
+          <div class="feat-label">Reserves</div>
+          <p class="feat-text">Gift funds and certain asset types may be allowed for reserves, providing additional flexibility at closing.</p>
+        </div>
+        <div class="feat">
+          <div class="feat-label">Income Qualification</div>
+          <p class="feat-text">May consider employment contracts or future income — critical for new graduates who haven't started earning yet.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section" id="apply">
+    <h2>Ready to <em>explore your options?</em></h2>
+    <p>Connect with a Horizon Capital loan officer to see if you qualify for this specialized medical professional program.</p>
+    <a href="#" class="hero-btn">Get Started Today <span class="arr">&rarr;</span></a>
+    <div class="cta-contact">
+      <div class="name">[Loan Officer Name]</div>
+      <div class="details">[Phone] &middot; [Email]</div>
+    </div>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    <div class="disclaimer-inner">
+      <div class="disclaimer-label">Important Disclosures</div>
+      <p><strong>This is not a commitment to lend.</strong> All loans are subject to credit approval, underwriting, and program guidelines. Not all applicants will qualify. Program terms, conditions, and availability are subject to change without notice.</p>
+      <p>Horizon Capital Lending Group is a mortgage broker, not a direct lender. We work with multiple wholesale lenders to provide access to a variety of loan programs, including specialized programs such as this one.</p>
+      <p>[Legal Entity Name] &nbsp;&middot;&nbsp; NMLS ID: [Insert NMLS] &nbsp;&middot;&nbsp; [Insert appropriate California license (DRE or DFPI)] &nbsp;&middot;&nbsp; Equal Housing Opportunity</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="f-name">Horizon Capital <em>Lending Group</em></div>
+        <div class="f-sub">Specialized Mortgage &amp; Business Financing</div>
+        <p>Smart, strategic financing solutions backed by experience. We work with multiple wholesale lenders to provide access to a variety of loan programs.</p>
+      </div>
+      <div>
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="#">Physician Loans</a></li>
+          <li><a href="horizon-capital-site.html#services">All Services</a></li>
+          <li><a href="horizon-capital-site.html#valuation">Home Value</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">NMLS ID: [Insert NMLS]</a></li>
+          <li><a href="#">[CA License: DRE or DFPI]</a></li>
+          <li><a href="#">Equal Housing Opportunity</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Horizon Capital Lending Group. All rights reserved.</div>
+      <a href="#">Equal Housing Opportunity</a>
+    </div>
+  </footer>
+
+</body>
+</html>
