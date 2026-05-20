@@ -28,21 +28,27 @@
     .nav-logo img { height: 40px; width: auto; }
     .nav-logo .wordmark { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--text); line-height: 1.1; }
     .nav-logo .wordmark em { font-style: italic; color: var(--gold); font-weight: 500; }
+    .nav-logo .nav-entity { display: block; font-family: var(--mono); font-size: 0.62rem; font-weight: 400; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); margin-top: 0.28rem; }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a { font-size: 0.72rem; font-weight: 600; color: var(--muted); text-decoration: none; letter-spacing: 0.12em; text-transform: uppercase; transition: color 200ms; }
     .nav-links a:hover { color: var(--gold); }
     @media (max-width: 700px) { .nav-links { display: none; } }
 
     /* HERO */
-    .hero { padding: clamp(5rem, 10vw, 10rem) 2rem clamp(4rem, 8vw, 8rem); text-align: center; position: relative; background: var(--white); }
-    .hero::after { content: ''; position: absolute; bottom: 0; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, var(--line), transparent); }
-    .hero-monogram { width: 90px; height: 90px; margin: 0 auto 2rem; opacity: 0.9; }
-    .hero h1 { font-family: var(--serif); font-size: clamp(2.5rem, 2rem + 4vw, 5rem); font-weight: 400; color: var(--text); line-height: 1; letter-spacing: -0.015em; margin-bottom: 1.5rem; }
-    .hero h1 em { font-style: italic; color: var(--gold); }
-    .hero .lede { font-size: clamp(1rem, 0.9rem + 0.4vw, 1.15rem); color: var(--muted); max-width: 540px; margin: 0 auto 2.5rem; line-height: 1.65; }
-    .hero-btn { display: inline-flex; align-items: center; gap: 0.75rem; padding: 1rem 2.25rem; border: none; border-radius: 4px; font-family: var(--font); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; background: var(--text); color: var(--white); text-decoration: none; transition: all 200ms; }
+    .hero { padding: clamp(6rem, 12vw, 12rem) 2rem clamp(5rem, 10vw, 10rem); text-align: center; position: relative; background-image: linear-gradient(180deg, rgba(20,20,20,0.50) 0%, rgba(20,20,20,0.30) 45%, rgba(20,20,20,0.55) 100%), url('content_images/hero-coastal-homes.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; color: var(--white); overflow: hidden; }
+    .hero::after { content: ''; position: absolute; bottom: 0; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent); }
+    .hero-monogram { width: clamp(200px, 22vw, 340px); height: auto; margin: 0 auto 2rem; opacity: 1; filter: drop-shadow(0 6px 24px rgba(0,0,0,0.35)); position: relative; }
+    .hero h1 { font-family: var(--serif); font-size: clamp(2.5rem, 2rem + 4vw, 5rem); font-weight: 400; color: var(--white); line-height: 1; letter-spacing: -0.015em; margin-bottom: 1.5rem; text-shadow: 0 2px 28px rgba(0,0,0,0.30); position: relative; }
+    .hero h1 em { font-style: italic; color: var(--gold-light); }
+    .hero .lede { font-size: clamp(1rem, 0.9rem + 0.4vw, 1.15rem); color: rgba(255,255,255,0.88); max-width: 540px; margin: 0 auto 2.5rem; line-height: 1.65; text-shadow: 0 1px 12px rgba(0,0,0,0.25); position: relative; }
+    .hero-btn { display: inline-flex; align-items: center; gap: 0.75rem; padding: 1rem 2.25rem; border: none; border-radius: 4px; font-family: var(--font); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; background: var(--text); color: var(--white); text-decoration: none; transition: all 200ms; position: relative; }
     .hero-btn:hover { background: var(--gold-deep); }
-    .hero-btn .arr { color: var(--gold-light); font-size: 1rem; }
+    .hero-btn .arr { color: var(--gold-light); font-size: 1rem; transition: color 200ms; }
+    /* Light variant for use over photo / dark backgrounds */
+    .hero-btn--light { background: var(--white); color: var(--text); box-shadow: 0 8px 24px rgba(0,0,0,0.18); }
+    .hero-btn--light .arr { color: var(--gold-deep); }
+    .hero-btn--light:hover { background: var(--gold); color: var(--white); }
+    .hero-btn--light:hover .arr { color: var(--white); }
 
     /* STATS BAR */
     .stats-bar { background: var(--off-white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -54,6 +60,14 @@
     .stat-num { font-family: var(--serif); font-size: clamp(2.5rem, 2rem + 2vw, 3.5rem); font-weight: 400; color: var(--text); line-height: 1; letter-spacing: -0.02em; }
     .stat-num span { color: var(--gold); }
     .stat-label { font-family: var(--mono); font-size: 0.6rem; color: var(--muted); letter-spacing: 0.2em; text-transform: uppercase; margin-top: 0.5rem; }
+
+    /* FEATURE BAND (photo interstitial) */
+    .feature-band { position: relative; padding: clamp(4rem, 10vw, 7rem) 2rem; text-align: center; background-image: linear-gradient(rgba(20,20,20,0.55), rgba(20,20,20,0.45)), url('content_images/modern-home-twilight.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; color: var(--white); overflow: hidden; min-height: clamp(280px, 32vw, 420px); display: flex; align-items: center; justify-content: center; }
+    .feature-band .pullquote { font-family: var(--serif); font-size: clamp(1.5rem, 1.2rem + 1.6vw, 2.75rem); font-weight: 400; line-height: 1.25; letter-spacing: -0.01em; max-width: 760px; margin: 0 auto; text-shadow: 0 2px 28px rgba(0,0,0,0.35); }
+    .feature-band .pullquote em { font-style: italic; color: var(--gold-light); }
+    .feature-band .pullquote::before, .feature-band .pullquote::after { content: ''; display: block; width: 48px; height: 1px; background: var(--gold-light); margin: 0 auto; opacity: 0.65; }
+    .feature-band .pullquote::before { margin-bottom: 1.5rem; }
+    .feature-band .pullquote::after { margin-top: 1.5rem; }
 
     /* SECTION */
     .section { max-width: 1120px; margin: 0 auto; padding: clamp(4rem, 8vw, 7rem) 2rem; }
@@ -102,20 +116,22 @@
     .form-group input::placeholder { color: var(--faint); }
     .form-submit { width: 100%; padding: 0.9rem; border: none; border-radius: 4px; font-family: var(--font); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; background: var(--text); color: var(--white); cursor: pointer; transition: background 200ms; }
     .form-submit:hover { background: var(--gold-deep); }
-    .valuation-info h3 { font-family: var(--serif); font-size: clamp(1.75rem, 1.5rem + 1vw, 2.25rem); font-weight: 400; color: var(--text); margin-bottom: 1rem; line-height: 1.15; }
-    .valuation-info h3 em { font-style: italic; color: var(--gold); }
-    .valuation-info p { color: var(--muted); margin-bottom: 1.5rem; line-height: 1.65; }
+    .valuation-info { background-image: linear-gradient(rgba(20,20,20,0.55), rgba(20,20,20,0.70)), url('content_images/family-home.jpg'); background-size: cover; background-position: center; border-radius: 8px; padding: 2.75rem; color: var(--white); position: relative; overflow: hidden; min-height: 480px; display: flex; flex-direction: column; justify-content: center; }
+    .valuation-info .section-label { color: var(--gold-light); }
+    .valuation-info h3 { font-family: var(--serif); font-size: clamp(1.75rem, 1.5rem + 1vw, 2.25rem); font-weight: 400; color: var(--white); margin-bottom: 1rem; line-height: 1.15; text-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+    .valuation-info h3 em { font-style: italic; color: var(--gold-light); }
+    .valuation-info p { color: rgba(255,255,255,0.85); margin-bottom: 1.5rem; line-height: 1.65; }
     .val-features { list-style: none; }
-    .val-features li { padding: 0.65rem 0; border-bottom: 1px solid var(--line-soft); font-size: 0.9rem; color: var(--text-mid); display: flex; align-items: baseline; gap: 0.75rem; }
+    .val-features li { padding: 0.65rem 0; border-bottom: 1px solid rgba(255,255,255,0.15); font-size: 0.9rem; color: rgba(255,255,255,0.88); display: flex; align-items: baseline; gap: 0.75rem; }
     .val-features li:last-child { border-bottom: none; }
-    .val-features li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 0.35rem; }
+    .val-features li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--gold-light); flex-shrink: 0; margin-top: 0.35rem; }
 
     /* CTA BAND */
-    .cta-band { padding: clamp(4rem, 8vw, 6rem) 2rem; text-align: center; position: relative; }
-    .cta-band::before { content: ''; position: absolute; top: 0; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, var(--line), transparent); }
-    .cta-band h2 { font-family: var(--serif); font-size: clamp(2rem, 1.5rem + 2vw, 3rem); font-weight: 400; color: var(--text); margin-bottom: 0.75rem; }
-    .cta-band h2 em { font-style: italic; color: var(--gold); }
-    .cta-band p { color: var(--muted); max-width: 440px; margin: 0 auto 2rem; }
+    .cta-band { padding: clamp(5rem, 10vw, 8rem) 2rem; text-align: center; position: relative; background-image: linear-gradient(rgba(20,20,20,0.55), rgba(20,20,20,0.40) 50%, rgba(20,20,20,0.65)), url('content_images/sunset-villa.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; color: var(--white); overflow: hidden; }
+    .cta-band::before { content: ''; position: absolute; top: 0; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent); }
+    .cta-band h2 { font-family: var(--serif); font-size: clamp(2rem, 1.5rem + 2vw, 3rem); font-weight: 400; color: var(--white); margin-bottom: 0.75rem; text-shadow: 0 2px 24px rgba(0,0,0,0.3); position: relative; }
+    .cta-band h2 em { font-style: italic; color: var(--gold-light); }
+    .cta-band p { color: rgba(255,255,255,0.88); max-width: 440px; margin: 0 auto 2rem; text-shadow: 0 1px 12px rgba(0,0,0,0.25); position: relative; }
 
     /* FOOTER */
     .footer { background: var(--navy-deep); color: rgba(255,255,255,0.5); padding: 3rem 2rem; }
@@ -133,6 +149,51 @@
     .footer-bottom { max-width: 1120px; margin: 0 auto; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; font-size: 0.68rem; }
     .footer-bottom a { font-size: 0.68rem; }
 
+    /* FOOTER COMPLIANCE */
+    .footer-compliance { max-width: 1120px; margin: 2.5rem auto 0; display: flex; align-items: center; gap: 1.75rem; flex-wrap: wrap; }
+    .footer-compliance .fc-lockup { height: 62px; width: auto; flex-shrink: 0; }
+    .footer-compliance .compliance-details { font-size: 0.72rem; line-height: 1.85; color: rgba(255,255,255,0.55); }
+    .footer-compliance .compliance-details strong { color: rgba(255,255,255,0.8); font-weight: 600; }
+    .footer-notice { max-width: 1120px; margin: 1.5rem auto 0; }
+    .footer-notice p { font-size: 0.72rem; line-height: 1.7; color: rgba(255,255,255,0.42); }
+    .footer-notice p strong { color: rgba(255,255,255,0.62); font-weight: 600; }
+    .eho-mark { display: inline-flex; align-items: center; gap: 0.5rem; }
+    .eho-mark img { height: 24px; width: auto; }
+
+    /* MOBILE OPTIMIZATIONS */
+    @media (max-width: 700px) {
+      body { font-size: 16px; }
+      .nav-inner { flex-direction: column; gap: 0.6rem; padding: 0.75rem 1.25rem; }
+      .nav-logo { gap: 0.6rem; }
+      .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.1rem; }
+      .nav-links a { font-size: 0.62rem; }
+      .hero { padding: clamp(3rem, 9vw, 5rem) 1.25rem clamp(3rem, 7vw, 4.5rem); }
+      .stats-bar-inner { padding: 2.5rem 1.25rem; }
+      .section { padding: clamp(3rem, 8vw, 5rem) 1.25rem; }
+      .section-sub { margin-bottom: 2.25rem; }
+      .team-grid { margin-left: auto; margin-right: auto; }
+      .team-info { padding: 1.25rem; }
+      .valuation-info { padding: 2rem 1.5rem; min-height: 380px; }
+      .valuation-form { padding: 1.75rem 1.25rem; }
+      .feature-band { padding: clamp(3rem, 9vw, 5rem) 1.25rem; min-height: clamp(220px, 38vw, 320px); }
+      .form-group input, .form-group select { font-size: 16px; }
+      .cta-band { padding: clamp(3rem, 8vw, 5rem) 1.25rem; }
+      .footer { padding: 2.5rem 1.25rem; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    }
+
+    @media (max-width: 420px) {
+      .nav-logo img { height: 34px; }
+      .nav-logo .wordmark { font-size: 1rem; }
+      .nav-links { gap: 0.85rem; }
+      .hero h1 br { display: none; }
+      .hero-btn { padding: 0.9rem 1.5rem; }
+      .stat-num { font-size: 2.25rem; }
+      .team-name { font-size: 1.4rem; }
+      .service { padding: 1.5rem; }
+      .service-title { font-size: 1.1rem; }
+    }
+
     @media print {
       .nav { position: relative; backdrop-filter: none; }
       body { background: white; }
@@ -147,7 +208,9 @@
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
         <img src="content_images/Elegant HC gold monogram logo.png" alt="HC">
-        <div class="wordmark">Horizon Capital <em>Lending</em></div>
+        <div class="wordmark">Horizon Capital <em>Lending</em>
+          <span class="nav-entity">A division of First Link Mortgage Inc.</span>
+        </div>
       </a>
       <ul class="nav-links">
         <li><a href="#team">Team</a></li>
@@ -159,10 +222,10 @@
   </nav>
 
   <section class="hero">
-    <img class="hero-monogram" src="content_images/Horizon Capital Lending Group logo.png" alt="Horizon Capital Lending Group">
+    <img class="hero-monogram" src="content_images/horizon-logo-white.png" alt="Horizon Capital Lending Group">
     <h1>Strategic financing,<br><em>exceptional results.</em></h1>
     <p class="lede">Horizon Capital Lending Group delivers smart, personalized mortgage and business financing solutions backed by over a decade of experience and more than $500 million in funded loans.</p>
-    <a href="#contact" class="hero-btn">Start a Conversation <span class="arr">&rarr;</span></a>
+    <a href="#contact" class="hero-btn hero-btn--light">Start a Conversation <span class="arr">&rarr;</span></a>
   </section>
 
   <div class="stats-bar">
@@ -181,6 +244,11 @@
       </div>
     </div>
   </div>
+
+  <!-- FEATURE BAND -->
+  <section class="feature-band">
+    <p class="pullquote">Built on relationships. <em>Driven by results.</em></p>
+  </section>
 
   <section class="section" id="team">
     <div class="section-label">The Team</div>
@@ -328,7 +396,7 @@
   <section class="cta-band" id="contact">
     <h2>Ready to <em>get started?</em></h2>
     <p>Connect with our team to discuss your financing goals and explore your options.</p>
-    <a href="#" class="hero-btn">Contact Us <span class="arr">&rarr;</span></a>
+    <a href="#" class="hero-btn hero-btn--light">Contact Us <span class="arr">&rarr;</span></a>
   </section>
 
   <footer class="footer">
@@ -350,16 +418,26 @@
       <div>
         <h4>Legal</h4>
         <ul>
-          <li><a href="#">NMLS ID: [Insert NMLS]</a></li>
-          <li><a href="#">[CA License: DRE or DFPI]</a></li>
+          <li><a href="#">NMLS #2527988</a></li>
+          <li><a href="#">DRE #01527812</a></li>
           <li><a href="#">Equal Housing Opportunity</a></li>
           <li><a href="#">Privacy Policy</a></li>
         </ul>
       </div>
     </div>
+    <div class="footer-compliance">
+      <img class="fc-lockup" src="content_images/equal-housing-first-link.png" alt="First Link Mortgage Inc. — NMLS 2527988 — Equal Housing Lender">
+      <div class="compliance-details">
+        <strong>First Link Mortgage Inc.</strong> &nbsp;&middot;&nbsp; CA DRE #01527812<br>
+        31630 Railroad Canyon Rd, Suite 15, Canyon Lake, CA 92587 &nbsp;&middot;&nbsp; (951)&nbsp;970-9107
+      </div>
+    </div>
+    <div class="footer-notice">
+      <p><strong>Fair Lending Notice.</strong> Pursuant to the Housing Financial Discrimination Act of 1977, it is illegal to discriminate in the provision of, or in the availability of, financial assistance because of race, color, religion, sex, marital status, national origin, ancestry, familial status, source of income, disability, or genetic information.</p>
+    </div>
     <div class="footer-bottom">
       <div>&copy; 2026 Horizon Capital Lending Group. All rights reserved.</div>
-      <a href="#">Equal Housing Opportunity</a>
+      <span class="eho-mark"><img src="content_images/equal-housing-icon.png" alt="Equal Housing Opportunity"> Equal Housing Opportunity</span>
     </div>
   </footer>
 
