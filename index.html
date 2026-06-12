@@ -77,7 +77,8 @@
     .section-sub { font-size: 1rem; color: var(--muted); max-width: 520px; margin-bottom: 3rem; }
 
     /* TEAM */
-    .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+    @media (max-width: 1000px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 800px) { .team-grid { grid-template-columns: 1fr; max-width: 480px; } }
     .team-card { background: var(--white); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; transition: box-shadow 300ms, transform 300ms; text-decoration: none; color: inherit; display: block; }
     .team-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.08); transform: translateY(-4px); }
@@ -288,6 +289,17 @@
           <div class="team-cta-link">View Profile <span class="arr">&rarr;</span></div>
         </div>
       </a>
+
+      <a class="team-card" href="mark.html">
+        <img class="team-photo" src="content_images/mark_pang_headshot.jpg" alt="Mark Pang">
+        <div class="team-info">
+          <div class="team-role">Mortgage Consultant</div>
+          <div class="team-name">Mark Pang</div>
+          <div class="team-divider"></div>
+          <p class="team-bio">Specializing in first-time homebuyers, Mark brings a personal perspective to every transaction — having used his own expertise to purchase his first home.</p>
+          <div class="team-cta-link">View Profile <span class="arr">&rarr;</span></div>
+        </div>
+      </a>
     </div>
   </section>
 
@@ -396,7 +408,7 @@
   <section class="cta-band" id="contact">
     <h2>Ready to <em>get started?</em></h2>
     <p>Connect with our team to discuss your financing goals and explore your options.</p>
-    <a href="#" class="hero-btn hero-btn--light">Contact Us <span class="arr">&rarr;</span></a>
+    <a href="mailto:conrad@horizonclg.com?subject=Horizon%20Capital%20Inquiry" class="hero-btn hero-btn--light">Contact Us <span class="arr">&rarr;</span></a>
   </section>
 
   <footer class="footer">
