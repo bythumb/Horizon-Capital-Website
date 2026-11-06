@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mark Pang — Mortgage Consultant | Horizon Capital Lending Group</title>
+  <meta name="description" content="Mark Pang, Mortgage Consultant at Horizon Capital Lending Group. Specializing in first-time homebuyers. NMLS #1893898.">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #2C2C2C; --navy-deep: #1A1A1A;
+      --gold: #B89544; --gold-deep: #97772E; --gold-light: #D4B36A;
+      --gold-soft: #F5EDDC; --gold-glow: #FBF6E8;
+      --white: #FFFFFF; --off-white: #FAFAF8; --warm-grey: #F5F4F1;
+      --line: #E8E6E0; --line-soft: #F0EEEA;
+      --text: #2C2C2C; --text-mid: #5A5A52; --muted: #8A8A7E; --faint: #BCBCB0;
+      --font: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --mono: 'JetBrains Mono', ui-monospace, monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); font-size: 15px; line-height: 1.6; color: var(--text); background: var(--white); -webkit-font-smoothing: antialiased; }
+
+    /* NAV */
+    .nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--line); }
+    .nav-inner { max-width: 1120px; margin: 0 auto; padding: 0.85rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .nav-logo img { height: 40px; width: auto; }
+    .nav-logo .wordmark { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--text); line-height: 1.1; }
+    .nav-logo .wordmark em { font-style: italic; color: var(--gold); font-weight: 500; }
+    .nav-logo .nav-entity { display: block; font-family: var(--mono); font-size: 0.62rem; font-weight: 400; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); margin-top: 0.28rem; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.72rem; font-weight: 600; color: var(--muted); text-decoration: none; letter-spacing: 0.12em; text-transform: uppercase; transition: color 200ms; }
+    .nav-links a:hover { color: var(--gold); }
+    @media (max-width: 700px) { .nav-links { display: none; } }
+
+    /* PERSONAL HERO */
+    .personal-hero { max-width: 1120px; margin: 0 auto; padding: clamp(4rem, 8vw, 7rem) 2rem; display: grid; grid-template-columns: 5fr 7fr; gap: clamp(2rem, 4vw, 4rem); align-items: center; }
+    @media (max-width: 800px) { .personal-hero { grid-template-columns: 1fr; text-align: center; } }
+    .personal-hero-photo { position: relative; }
+    .personal-hero-photo img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: top center; border-radius: 8px; filter: grayscale(15%); display: block; }
+    .personal-hero-photo::after { content: ''; position: absolute; bottom: -8px; right: -8px; width: 60%; height: 60%; border: 2px solid var(--gold); border-radius: 8px; z-index: -1; opacity: 0.4; }
+    .personal-hero-text .hero-label { font-family: var(--mono); font-size: 0.6rem; color: var(--gold-deep); letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 1rem; }
+    .personal-hero-text h1 { font-family: var(--serif); font-size: clamp(2.5rem, 2rem + 3vw, 4rem); font-weight: 400; color: var(--text); line-height: 1.05; letter-spacing: -0.015em; margin-bottom: 0.5rem; }
+    .personal-hero-text h1 em { font-style: italic; color: var(--gold); }
+    .personal-hero-text .hero-role { font-family: var(--mono); font-size: 0.68rem; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.75rem; }
+    .personal-hero-text .hero-divider { width: 40px; height: 2px; background: var(--gold); margin-bottom: 1.75rem; }
+    @media (max-width: 800px) { .personal-hero-text .hero-divider { margin-left: auto; margin-right: auto; } }
+    .personal-hero-text .hero-bio { font-size: 0.92rem; color: var(--text-mid); line-height: 1.75; }
+    .personal-hero-text .hero-bio + .hero-bio { margin-top: 1rem; }
+
+    /* SECTION */
+    .section { max-width: 1120px; margin: 0 auto; padding: clamp(4rem, 8vw, 7rem) 2rem; }
+    .section-label { font-family: var(--mono); font-size: 0.6rem; color: var(--gold-deep); letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 1rem; }
+    .section-title { font-family: var(--serif); font-size: clamp(2rem, 1.5rem + 2vw, 3rem); font-weight: 400; color: var(--text); line-height: 1.1; margin-bottom: 0.75rem; }
+    .section-title em { font-style: italic; color: var(--gold); }
+    .section-sub { font-size: 1rem; color: var(--muted); max-width: 520px; margin-bottom: 3rem; }
+
+    /* SERVICES */
+    .services-bg { background: var(--off-white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+    @media (max-width: 900px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 500px) { .services-grid { grid-template-columns: 1fr; } }
+    .service { padding: 1.75rem; background: var(--white); border: 1px solid var(--line); border-radius: 6px; position: relative; }
+    .service::before { content: ''; position: absolute; top: 0; left: 1.75rem; right: 1.75rem; height: 2px; background: var(--gold); opacity: 0.4; }
+    .service-num { font-family: var(--serif); font-size: 1.75rem; color: var(--faint); font-weight: 400; line-height: 1; margin-bottom: 0.85rem; }
+    .service-title { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--text); margin-bottom: 0.4rem; }
+    .service-text { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
+    /* CTA BAND */
+    .cta-band { padding: clamp(4rem, 8vw, 6rem) 2rem; text-align: center; position: relative; }
+    .cta-band::before { content: ''; position: absolute; top: 0; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, var(--line), transparent); }
+    .cta-band h2 { font-family: var(--serif); font-size: clamp(2rem, 1.5rem + 2vw, 3rem); font-weight: 400; color: var(--text); margin-bottom: 0.75rem; }
+    .cta-band h2 em { font-style: italic; color: var(--gold); }
+    .cta-band p { color: var(--muted); max-width: 440px; margin: 0 auto 2rem; }
+    .hero-btn { display: inline-flex; align-items: center; gap: 0.75rem; padding: 1rem 2.25rem; border: none; border-radius: 4px; font-family: var(--font); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; background: var(--text); color: var(--white); text-decoration: none; transition: all 200ms; }
+    .hero-btn:hover { background: var(--gold-deep); }
+    .hero-btn .arr { color: var(--gold-light); font-size: 1rem; }
+
+    /* FOOTER */
+    .footer { background: var(--navy-deep); color: rgba(255,255,255,0.5); padding: 3rem 2rem; }
+    .footer-inner { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 2.5rem; }
+    @media (max-width: 700px) { .footer-inner { grid-template-columns: 1fr; gap: 2rem; } }
+    .footer-brand .f-name { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: var(--white); margin-bottom: 0.25rem; }
+    .footer-brand .f-name em { font-style: italic; color: var(--gold-light); }
+    .footer-brand .f-sub { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem; }
+    .footer-brand p { font-size: 0.78rem; line-height: 1.6; max-width: 300px; }
+    .footer h4 { font-family: var(--mono); font-size: 0.58rem; color: var(--gold-light); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem; }
+    .footer ul { list-style: none; }
+    .footer li { margin-bottom: 0.5rem; }
+    .footer a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; transition: color 200ms; }
+    .footer a:hover { color: var(--gold-light); }
+    .footer-bottom { max-width: 1120px; margin: 0 auto; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; font-size: 0.68rem; }
+    .footer-bottom a { font-size: 0.68rem; }
+
+    /* FOOTER COMPLIANCE */
+    .footer-compliance { max-width: 1120px; margin: 2.5rem auto 0; display: flex; align-items: center; gap: 1.75rem; flex-wrap: wrap; }
+    .footer-compliance .fc-lockup { height: 62px; width: auto; flex-shrink: 0; }
+    .footer-compliance .compliance-details { font-size: 0.72rem; line-height: 1.85; color: rgba(255,255,255,0.55); }
+    .footer-compliance .compliance-details strong { color: rgba(255,255,255,0.8); font-weight: 600; }
+    .footer-notice { max-width: 1120px; margin: 1.5rem auto 0; }
+    .footer-notice p { font-size: 0.72rem; line-height: 1.7; color: rgba(255,255,255,0.42); }
+    .footer-notice p strong { color: rgba(255,255,255,0.62); font-weight: 600; }
+    .footer-notice p + p { margin-top: 0.75rem; }
+    .eho-mark { display: inline-flex; align-items: center; gap: 0.5rem; }
+    .eho-mark img { height: 24px; width: auto; }
+
+    /* MOBILE OPTIMIZATIONS */
+    @media (max-width: 700px) {
+      body { font-size: 16px; }
+      .nav-inner { flex-direction: column; gap: 0.6rem; padding: 0.75rem 1.25rem; }
+      .nav-logo { gap: 0.6rem; }
+      .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.1rem; }
+      .nav-links a { font-size: 0.62rem; }
+      .personal-hero { padding: clamp(3rem, 8vw, 5rem) 1.25rem; gap: 2rem; }
+      .personal-hero-photo { max-width: 360px; margin: 0 auto; }
+      .personal-hero-photo::after { display: none; }
+      .section { padding: clamp(3rem, 8vw, 5rem) 1.25rem; }
+      .section-sub { margin-bottom: 2.25rem; }
+      .cta-band { padding: clamp(3rem, 8vw, 5rem) 1.25rem; }
+      .footer { padding: 2.5rem 1.25rem; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    }
+
+    @media (max-width: 420px) {
+      .nav-logo img { height: 34px; }
+      .nav-logo .wordmark { font-size: 1rem; }
+      .nav-links { gap: 0.85rem; }
+      .hero-btn { padding: 0.9rem 1.5rem; }
+      .service { padding: 1.5rem; }
+      .service-title { font-size: 1.1rem; }
+      .personal-hero-text .hero-bio { font-size: 0.88rem; }
+    }
+
+    @media print {
+      .nav { position: relative; backdrop-filter: none; }
+      body { background: white; }
+      .service { box-shadow: none; border: 1px solid #ddd; }
+      .footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="horizon-capital-site.html" class="nav-logo">
+        <img src="content_images/Elegant HC gold monogram logo.png" alt="HC">
+        <div class="wordmark">Horizon Capital <em>Lending</em>
+          <span class="nav-entity">A division of First Link Mortgage Inc.</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="horizon-capital-site.html#team">Team</a></li>
+        <li><a href="horizon-capital-site.html#services">Services</a></li>
+        <li><a href="horizon-capital-site.html#valuation">Home Value</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="personal-hero">
+    <div class="personal-hero-photo">
+      <img src="content_images/mark_pang_headshot.jpg" alt="Mark Pang">
+    </div>
+    <div class="personal-hero-text">
+      <div class="hero-label">Horizon Capital Lending Group</div>
+      <h1>Mark <em>Pang</em></h1>
+      <div class="hero-role">Mortgage Consultant &nbsp;&middot;&nbsp; NMLS# 1893898</div>
+      <div class="hero-divider"></div>
+      <p class="hero-bio">I began my career in the mortgage industry in 2020. After two years of learning the business and helping clients achieve homeownership, I used that same expertise to purchase my own home. That experience gave me a firsthand understanding of what it truly feels like to be on the other side of the table.</p>
+      <p class="hero-bio">Every loan has its own complexity, and I pride myself on breaking that down into a language you can understand. I specialize in helping first-time homebuyers navigate their options and choose the loan product that truly fits their situation — not just the one that looks good on paper.</p>
+      <p class="hero-bio">I'm proud to be part of Horizon Capital Lending Group, where we offer something rare in this industry: real estate, loans, and escrow all under one roof. Through their exclusive Save &amp; Bundle program, I'm able to get my clients better rates and a smoother, more connected experience from start to finish.</p>
+    </div>
+  </section>
+
+  <div class="services-bg" id="services">
+    <section class="section">
+      <div class="section-label">Specialties</div>
+      <h2 class="section-title">How Mark can <em>help.</em></h2>
+      <p class="section-sub">From first-time buyers to experienced homeowners, Mark brings clarity and personal attention to every transaction.</p>
+
+      <div class="services-grid">
+        <div class="service">
+          <div class="service-num">01</div>
+          <div class="service-title">First-Time Homebuyers</div>
+          <p class="service-text">Guiding buyers through the process step by step — from loan selection to closing — in plain language that makes sense.</p>
+        </div>
+        <div class="service">
+          <div class="service-num">02</div>
+          <div class="service-title">Home Purchase</div>
+          <p class="service-text">Conventional, FHA, VA, and specialty programs matched to your financial profile and long-term goals.</p>
+        </div>
+        <div class="service">
+          <div class="service-num">03</div>
+          <div class="service-title">Save &amp; Bundle Program</div>
+          <p class="service-text">Horizon's exclusive program combining real estate, lending, and escrow under one roof — delivering better rates and a seamless experience.</p>
+        </div>
+        <div class="service">
+          <div class="service-num">04</div>
+          <div class="service-title">Refinance</div>
+          <p class="service-text">Lower your rate, reduce your term, or tap into equity — structured around what actually improves your financial position.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="cta-band" id="contact">
+    <h2>Work with <em>Mark</em></h2>
+    <p>Ready to explore your options? Mark will walk you through everything — no pressure, no jargon.</p>
+    <a href="mailto:mark@horizonclg.com?subject=Mortgage%20Inquiry&cc=conrad@horizonclg.com" class="hero-btn">Get in Touch <span class="arr">&rarr;</span></a>
+    <div style="margin-top: 1.5rem; font-family: var(--mono); font-size: 0.7rem; color: var(--muted); letter-spacing: 0.05em;">
+      <div style="font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--text); margin-bottom: 0.25rem;">Mark Pang</div>
+      <div>+1 (562) 822-2759 &nbsp;&middot;&nbsp; mark@horizonclg.com</div>
+      <div style="margin-top: 0.25rem;">NMLS# 1893898</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="f-name">Horizon Capital <em>Lending Group</em></div>
+        <div class="f-sub">Specialized Mortgage &amp; Business Financing</div>
+        <p>Smart, strategic financing solutions backed by experience. We are a mortgage broker, not a direct lender. We work with multiple wholesale lenders to provide access to a variety of loan programs.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="horizon-capital-site.html#team">Our Team</a></li>
+          <li><a href="horizon-capital-site.html#services">Services</a></li>
+          <li><a href="horizon-capital-site.html#valuation">Home Value</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/1893898" target="_blank" rel="noopener">NMLS ID: 1893898</a></li>
+          <li><a href="https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/2527988" target="_blank" rel="noopener">DRE #01527812</a></li>
+          <li><a href="#">Equal Housing Opportunity</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-compliance">
+      <img class="fc-lockup" src="content_images/equal-housing-first-link.png" alt="First Link Mortgage Inc. — NMLS ID #2527988 — Equal Housing Opportunity">
+      <div class="compliance-details">
+        <strong>Mark Pang</strong>, Mortgage Consultant &nbsp;&middot;&nbsp; NMLS ID #1893898<br>
+        <strong>First Link Mortgage Inc.</strong> &nbsp;&middot;&nbsp; CA DRE #01527812 &nbsp;&middot;&nbsp; NMLS ID #2527988 &nbsp;&middot;&nbsp; Licensed by the California Department of Real Estate<br>
+        31630 Railroad Canyon Rd, Suite 15, Canyon Lake, CA 92587 &nbsp;&middot;&nbsp; (951)&nbsp;970-9107
+      </div>
+    </div>
+    <div class="footer-notice">
+      <p><strong>Fair Lending Notice.</strong> Pursuant to the Housing Financial Discrimination Act of 1977, it is illegal to discriminate in the provision of, or in the availability of, financial assistance because of race, color, religion, sex, marital status, national origin, ancestry, familial status, source of income, disability, or genetic information.</p>
+      <p><strong>Lending Disclosure.</strong> This website is not an offer to lend or extend credit. All loan programs are subject to underwriting guidelines, credit approval, and program availability. Interest rates, loan programs, terms, and conditions are subject to change without notice. Actual rates and payments will vary based on your credit profile, loan amount, property type, and other factors. Horizon Capital Lending Group is a DBA of First Link Mortgage Inc., a California mortgage broker. First Link Mortgage Inc. is not a lender and does not make loans directly; loans are funded through third-party wholesale lenders.</p>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Horizon Capital Lending Group. All rights reserved.</div>
+      <span class="eho-mark"><img src="content_images/equal-housing-icon.png" alt="Equal Housing Opportunity"> Equal Housing Opportunity</span>
+    </div>
+  </footer>
+
+</body>
+</html>
