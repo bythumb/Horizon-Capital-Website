@@ -90,6 +90,23 @@
     .hero-btn:hover { background: var(--gold-deep); }
     .hero-btn .arr { color: var(--gold-light); font-size: 1rem; }
 
+    /* CONTACT FORM */
+    .form-group { margin-bottom: 1rem; }
+    .form-group label { display: block; font-family: var(--mono); font-size: 0.58rem; color: var(--muted); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.4rem; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--line); border-radius: 4px; font-family: var(--font); font-size: 0.88rem; color: var(--text); background: var(--white); outline: none; transition: border-color 200ms; }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: var(--faint); }
+    .form-submit { width: 100%; padding: 0.9rem; border: none; border-radius: 4px; font-family: var(--font); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; background: var(--text); color: var(--white); cursor: pointer; transition: background 200ms; }
+    .form-submit:hover { background: var(--gold-deep); }
+    .contact-form-card { background: var(--white); border-radius: 8px; padding: 2.5rem; max-width: 460px; margin: 2rem auto 0; text-align: left; box-shadow: 0 20px 50px rgba(0,0,0,0.12); position: relative; border: 1px solid var(--line); }
+    .consent-group { margin-bottom: 1.25rem; display: flex; align-items: flex-start; gap: 0.65rem; }
+    .consent-group input[type="checkbox"] { width: 17px; height: 17px; margin-top: 0.15rem; accent-color: var(--gold); flex-shrink: 0; }
+    .consent-group label { font-size: 0.74rem; color: var(--text-mid); line-height: 1.5; font-family: var(--font); text-transform: none; letter-spacing: normal; }
+    .form-note { font-size: 0.78rem; color: var(--muted); text-align: center; margin-top: 1rem; }
+    .form-note a { color: var(--gold-deep); font-weight: 600; text-decoration: none; }
+    .form-status { font-size: 0.82rem; text-align: center; margin-top: 1rem; }
+
     /* FOOTER */
     .footer { background: var(--navy-deep); color: rgba(255,255,255,0.5); padding: 3rem 2rem; }
     .footer-inner { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 2.5rem; }
@@ -130,6 +147,8 @@
       .section { padding: clamp(3rem, 8vw, 5rem) 1.25rem; }
       .section-sub { margin-bottom: 2.25rem; }
       .cta-band { padding: clamp(3rem, 8vw, 5rem) 1.25rem; }
+      .form-group input, .form-group select, .form-group textarea { font-size: 16px; }
+      .contact-form-card { padding: 1.75rem 1.25rem; }
       .footer { padding: 2.5rem 1.25rem; }
       .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
     }
@@ -250,7 +269,35 @@
   <section class="cta-band" id="contact">
     <h2>Work with <em>Conrad</em></h2>
     <p>Ready to explore your financing options? Connect with Conrad to discuss your goals and find the right solution.</p>
-    <a href="mailto:conrad@horizonclg.com?subject=Financing%20Inquiry" class="hero-btn">Get in Touch <span class="arr">&rarr;</span></a>
+    <form class="contact-form-card">
+      <div class="form-group">
+        <label for="contact-name">Full Name</label>
+        <input type="text" id="contact-name" name="name" placeholder="Jane Smith" required>
+      </div>
+      <div class="form-group">
+        <label for="contact-email">Email</label>
+        <input type="email" id="contact-email" name="email" placeholder="jane@email.com" required>
+      </div>
+      <div class="form-group">
+        <label for="contact-phone">Phone</label>
+        <input type="tel" id="contact-phone" name="phone" placeholder="(555) 123-4567">
+      </div>
+      <div class="form-group">
+        <label for="contact-message">Message</label>
+        <textarea id="contact-message" name="message" placeholder="How can we help?"></textarea>
+      </div>
+      <div class="consent-group">
+        <input type="checkbox" id="consent-transactional" name="consent_transactional">
+        <label for="consent-transactional">By checking this box, I consent to receive non-marketing text messages from First Link Mortgage about appointment information - confirmation, notifications &amp; reminder messages. Message frequency varies, message &amp; data rates may apply. Text HELP for assistance, reply STOP to opt out.</label>
+      </div>
+      <div class="consent-group">
+        <input type="checkbox" id="consent-marketing" name="consent_marketing">
+        <label for="consent-marketing">By checking this box, I consent to receive marketing and promotional messages including special offers, discounts, new product updates among others from First Link Mortgage at the phone number provided. Frequency may vary. Message &amp; data rates may apply. Text HELP for assistance, reply STOP to opt out.</label>
+      </div>
+      <p class="form-note" style="margin-top: 0; margin-bottom: 1rem;">By submitting this form, you agree to our <a href="privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a> and <a href="terms-of-service.html" target="_blank" rel="noopener">Terms of Service</a>.</p>
+      <button type="submit" class="form-submit">Contact Us &rarr;</button>
+    </form>
+    <p class="form-note">Prefer email? Reach us directly at <a href="mailto:conrad@horizonclg.com?subject=Financing%20Inquiry">conrad@horizonclg.com</a>.</p>
   </section>
 
   <footer class="footer">
@@ -275,7 +322,8 @@
           <li><a href="#">NMLS #2527988</a></li>
           <li><a href="#">DRE #01527812</a></li>
           <li><a href="#">Equal Housing Opportunity</a></li>
-          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-of-service.html">Terms of Service</a></li>
         </ul>
       </div>
     </div>
@@ -295,5 +343,64 @@
     </div>
   </footer>
 
+  <script>
+    (function () {
+      var GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/erwBPn0yyuJ7TeWD3ur8/webhook-trigger/2387eb3b-58b7-4a3e-99b4-9a465b3df98d';
+      var form = document.querySelector('.contact-form-card');
+      if (!form) return;
+
+      function showStatus(message, isError) {
+        var status = form.querySelector('.form-status');
+        if (!status) {
+          status = document.createElement('p');
+          status.className = 'form-status';
+          form.appendChild(status);
+        }
+        status.textContent = message;
+        status.style.color = isError ? '#B33A3A' : 'var(--gold-deep)';
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var submitBtn = form.querySelector('.form-submit');
+        var originalLabel = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+
+        var payload = {
+          full_name: form.querySelector('#contact-name').value,
+          email: form.querySelector('#contact-email').value,
+          phone: form.querySelector('#contact-phone').value,
+          message: form.querySelector('#contact-message').value,
+          consent_transactional: form.querySelector('#consent-transactional').checked,
+          consent_marketing: form.querySelector('#consent-marketing').checked,
+          source: 'Horizon Capital Lending Group Website — Conrad Contact Form',
+          page_url: window.location.href,
+          submitted_at: new Date().toISOString()
+        };
+
+        fetch(GHL_WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        })
+          .then(function (res) {
+            if (!res.ok) throw new Error('Request failed with status ' + res.status);
+            form.reset();
+            showStatus("Thanks — we've received your message and will be in touch shortly.", false);
+          })
+          .catch(function () {
+            showStatus('Something went wrong — please try again or email us directly.', true);
+          })
+          .finally(function () {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalLabel;
+          });
+      });
+    })();
+  </script>
+
+  <!-- GoHighLevel chat widget (A2P verification) -->
+  <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6af36fb35cfb44d5cdb6aa1c"></script>
 </body>
 </html>
